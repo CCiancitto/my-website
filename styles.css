@@ -1,121 +1,181 @@
-/* Reset-ish */
-*{box-sizing:border-box}
-html,body{height:100%}
+/* =========================
+   Reset-ish
+========================= */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: #e8edf3;
-  background: radial-gradient(1200px 600px at 85% -10%, rgba(92,200,255,0.10), transparent 60%),
-              radial-gradient(1000px 500px at -10% 110%, rgba(160,255,204,0.08), transparent 60%),
-              #0a1018; /* dark metallic blue base */
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(92,200,255,0.10), transparent 60%),
+    radial-gradient(1000px 500px at -10% 110%, rgba(160,255,204,0.08), transparent 60%),
+    #0a1018; /* dark metallic blue base */
 }
-/* Header */
+
+/* =========================
+   Header
+========================= */
 .site-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;   /* centers logo + nav vertically */
+  align-items: center;          /* centers logo + nav vertically */
   padding: 1.2rem 2rem;
 }
-.brand{display:flex; align-items:center; gap:12px}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+
+/* Use clamp so the logo scales but never exceeds 160px */
 .logo-img {
-  height: 15vh;
-  max-height: 160px;
+  max-height: clamp(72px, 15vh, 160px);
   width: auto;
   opacity: 0;
-  animation: fadeInLogo 2.8s ease-in-out forwards;
+  animation: fadeInLogo 2.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
 }
 
-/* Define the animation */
+/* Subtle lift on the logo */
 @keyframes fadeInLogo {
   from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.site-nav a{
-  color:#cfe6f7; text-decoration:none; margin-left:14px; font-weight:600; font-size:14px;
-  opacity:.85;
-}
-.site-nav a[aria-current="page"]{opacity:1}
-.site-nav a:hover{text-decoration:underline}
 
-/* Hero */
-.hero {
-  padding-top: 2rem; /* keeps spacing above without affecting width */
+.site-nav a {
+  color: #cfe6f7;
+  text-decoration: none;
+  margin-left: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: .85;
 }
+.site-nav a[aria-current="page"] { opacity: 1; }
+.site-nav a:hover { text-decoration: underline; }
+
+/* =========================
+   Hero
+========================= */
+/* Center the hero content without adding width-changing side padding */
 .hero {
+  display: flex;
+  justify-content: center;
+  /* no padding here; we keep width stable */
   opacity: 0;
-  animation: fadeInHero 1.8s ease-in-out forwards;
-  animation-delay: 2.2s; /* starts right after logo fade */
+  animation: fadeInHero 1.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  animation-delay: 2.9s;  /* starts right after the 2.8s logo fade */
 }
 
+/* Card stays constrained and centered */
+.card {
+  width: 100%;
+  max-width: 760px;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow:
+    0 10px 40px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+/* Fade/lift for hero */
 @keyframes fadeInHero {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:20px; padding:26px; max-width:760px;
-  box-shadow:0 10px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
-}
-.pill{
-  display:inline-block; font-size:12px; font-weight:700; letter-spacing:.2px;
-  color:#0b1a22; background:linear-gradient(90deg, #5cc8ff, #a0ffcc);
-  padding:6px 10px; border-radius:999px; margin-bottom:8px;
-}
-h1{margin:8px 0 10px; font-size:28px}
-.focus{color:#a0ffcc}
-.teaser{color:#a7b2bf; line-height:1.6; margin:0 0 12px}
-
-.row{display:flex; gap:10px; margin:10px 0 6px}
-#email{
-  flex:1; height:44px; border-radius:12px; background:#0e1217; color:#e8edf3;
-  border:1px solid rgba(255,255,255,.10); padding:0 14px; font-size:15px; outline:none;
-}
-#email:focus{border-color:#5cc8ff; box-shadow:0 0 0 6px rgba(92,200,255,.35)}
-button{
-  height:44px; border-radius:12px; border:0; cursor:pointer; font-weight:800; font-size:15px;
-  background:linear-gradient(90deg, #5cc8ff, #a0ffcc); color:#06202b; padding:0 16px;
-}
-button:active{transform:translateY(1px)}
-
-.micro{font-size:12px; color:#a7b2bf}
-
-.points{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px;
-}
-.points article{
-  background:#11151a; border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:16px;
-}
-.points h3{margin:0 0 6px}
-
-/* Footer */
-.site-footer{border-top:1px solid rgba(255,255,255,.06); padding:18px 22px; margin-top:26px}
-.links{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:6px}
-.links a{color:#5cc8ff; text-decoration:none}
-.links a:hover{text-decoration:underline}
-.copy{color:#a7b2bf; font-size:12px}
-
-/* Responsive */
-@media (max-width:720px){
-  .points{grid-template-columns:1fr}
-  .row{flex-direction:column}
-  button{width:100%}
+.pill {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: .2px;
+  color: #0b1a22;
+  background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
 }
 
+h1 { margin: 8px 0 10px; font-size: 28px; }
+.focus { color: #a0ffcc; }
 
+.teaser { color: #a7b2bf; line-height: 1.6; margin: 0 0 12px; }
 
+.row {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 6px;
+}
 
+#email {
+  flex: 1;
+  height: 44px;
+  border-radius: 12px;
+  background: #0e1217;
+  color: #e8edf3;
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 0 14px;
+  font-size: 15px;
+  outline: none;
+}
+#email:focus {
+  border-color: #5cc8ff;
+  box-shadow: 0 0 0 6px rgba(92,200,255,.35);
+}
 
+button {
+  height: 44px;
+  border-radius: 12px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 15px;
+  background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
+  color: #06202b;
+  padding: 0 16px;
+}
+button:active { transform: translateY(1px); }
 
+.micro { font-size: 12px; color: #a7b2bf; }
 
+/* =========================
+   Feature Points
+========================= */
+.points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+.points article {
+  background: #11151a;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  padding: 16px;
+}
+.points h3 { margin: 0 0 6px; }
 
+/* =========================
+   Footer
+========================= */
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding: 18px 22px;
+  margin-top: 26px;
+}
+.links { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+.links a { color: #5cc8ff; text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+.copy { color: #a7b2bf; font-size: 12px; }
 
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px) {
+  /* Give a little breathing room on smaller screens */
+  .site-header { padding: 1rem 1.25rem; }
+  .card { padding: 22px; }
+}
 
-
+@media (max-width: 720px) {
+  .points { grid-template-columns: 1fr; }
+  .row { flex-direction: column; }
+  button { width: 100%; }
+}
