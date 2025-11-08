@@ -18,11 +18,10 @@ body {
 }
 .brand{display:flex; align-items:center; gap:12px}
 .logo-img {
-  height: 100px;          /* adjust for balance */
-  width: auto;
-  display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 0 10px rgba(92,200,255,0.25));
+  height: 10vh;       /* roughly 10% of the visible screen height */
+  max-height: 120px;  /* cap it so it doesn’t get too large on tall screens */
+  width: auto;        /* preserve proportions */
+  margin-top: 0.5vh;  /* adjust spacing if needed */
 }
 .wordmark{font-weight:800; letter-spacing:.2px}
 
@@ -85,6 +84,7 @@ button:active{transform:translateY(1px)}
   .row{flex-direction:column}
   button{width:100%}
 }
+
 
 
 
