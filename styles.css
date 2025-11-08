@@ -10,18 +10,25 @@ body {
               #0a1018; /* dark metallic blue base */
 }
 /* Header */
-.site-header{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:16px 22px; border-bottom:1px solid rgba(255,255,255,.06);
-  background:rgba(255,255,255,0.02); backdrop-filter:saturate(120%) blur(4px);
-  position:sticky; top:0; z-index:10;
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;   /* centers logo + nav vertically */
+  padding: 1.2rem 2rem;
 }
 .brand{display:flex; align-items:center; gap:12px}
 .logo-img {
-  height: 15vh;       /* roughly 10% of the visible screen height */
-  max-height: 160px;  /* cap it so it doesn’t get too large on tall screens */
-  width: auto;        /* preserve proportions */
-  margin-top: 0.5vh;  /* adjust spacing if needed */
+  height: 15vh;
+  max-height: 160px;
+  width: auto;
+  opacity: 0;
+  animation: fadeInLogo 1.2s ease-in-out forwards;
+}
+
+/* Define the animation */
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .wordmark{font-weight:800; letter-spacing:.2px}
 
@@ -84,6 +91,7 @@ button:active{transform:translateY(1px)}
   .row{flex-direction:column}
   button{width:100%}
 }
+
 
 
 
