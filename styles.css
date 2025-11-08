@@ -18,8 +18,8 @@ body {
 }
 .brand{display:flex; align-items:center; gap:12px}
 .logo-img {
-  height: 10vh;       /* roughly 10% of the visible screen height */
-  max-height: 120px;  /* cap it so it doesn’t get too large on tall screens */
+  height: 15vh;       /* roughly 10% of the visible screen height */
+  max-height: 160px;  /* cap it so it doesn’t get too large on tall screens */
   width: auto;        /* preserve proportions */
   margin-top: 0.5vh;  /* adjust spacing if needed */
 }
@@ -84,6 +84,7 @@ button:active{transform:translateY(1px)}
   .row{flex-direction:column}
   button{width:100%}
 }
+
 
 
 
