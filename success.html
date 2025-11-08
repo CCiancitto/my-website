@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Utuscribe — You’re on the list</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, noarchive">
+  <meta name="description" content="Thanks for joining the Utuscribe waitlist. Here’s what to expect next.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific polish (keeps your main styles intact) */
+    .hero .card h1 { margin-top: .25rem; }
+    .lead { font-size: 1.15rem; opacity: .9; }
+    .actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem; }
+    .actions a.button {
+      display:inline-block; padding:.65rem 1rem; border-radius:8px; 
+      background:#5cc8ff; color:#001018; text-decoration:none; font-weight:600;
+    }
+    .actions a.secondary {
+      background:transparent; border:1px solid rgba(255,255,255,.14);
+      color:#e8edf3;
+    }
+    .expect { display:grid; gap:1rem; margin-top:1.25rem; }
+    .expect li { margin-left:1.25rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="logo_Utuscribe_transparent.png" alt="Utuscribe logo" class="logo-img">
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="card">
+      <div class="pill">Success</div>
+      <h1>You're on the list. <span class="focus">Thank you.</span></h1>
+      <p class="lead">
+        We’ll email you when there’s something worth your time — meaningful progress,
+        early features to try, and milestones that show clear results.
+      </p>
+
+      <ul class="expect">
+        <li><strong>Occasional updates</strong> — concise, practical, and focused on outcomes.</li>
+        <li><strong>Early access invites</strong> — try new capabilities before launch.</li>
+        <li><strong>Your data stays yours</strong> — private by default, no spam, easy unsubscribe.</li>
+      </ul>
+
+      <div class="actions">
+        <a class="button" href="index.html">Back to homepage</a>
+        <a class="button secondary" href="https://buttondown.email/utuscribe/archive" target="_blank" rel="noopener">View updates archive</a>
+      </div>
+
+      <p class="micro" style="margin-top:1rem;">
+        If this sign-up wasn’t you, ignore the confirmation email and you won’t be added.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="links">
+      <a href="mailto:hello@utuscribe.com">Contact</a>
+      <a href="#" aria-disabled="true" onclick="return false;">Careers (soon)</a>
+      <a href="#" aria-disabled="true" onclick="return false;">Press (soon)</a>
+    </div>
+    <div class="copy">© <span id="yr"></span> Utuscribe LLC. All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
