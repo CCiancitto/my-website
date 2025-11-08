@@ -18,7 +18,7 @@ body {
 }
 .brand{display:flex; align-items:center; gap:12px}
 .logo-img {
-  height: 60px;          /* adjust for balance */
+  height: 100px;          /* adjust for balance */
   width: auto;
   display: block;
   margin: 0 auto;
@@ -85,5 +85,6 @@ button:active{transform:translateY(1px)}
   .row{flex-direction:column}
   button{width:100%}
 }
+
 
 
