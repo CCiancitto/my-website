@@ -22,7 +22,7 @@ body {
   max-height: 160px;
   width: auto;
   opacity: 0;
-  animation: fadeInLogo 1.2s ease-in-out forwards;
+  animation: fadeInLogo 2.2s ease-in-out forwards;
 }
 
 /* Define the animation */
@@ -89,6 +89,7 @@ button:active{transform:translateY(1px)}
   .row{flex-direction:column}
   button{width:100%}
 }
+
 
 
 
