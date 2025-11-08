@@ -1,14 +1,14 @@
 /* Reset-ish */
 *{box-sizing:border-box}
 html,body{height:100%}
-body{
-  margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:#e8edf3; background:#0b0d10;
-  background-image:
-    radial-gradient(1000px 500px at 85% -10%, rgba(92,200,255,.12), transparent 60%),
-    radial-gradient(800px 400px at -10% 110%, rgba(160,255,204,.10), transparent 60%);
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #e8edf3;
+  background: radial-gradient(1200px 600px at 85% -10%, rgba(92,200,255,0.10), transparent 60%),
+              radial-gradient(1000px 500px at -10% 110%, rgba(160,255,204,0.08), transparent 60%),
+              #0a1018; /* dark metallic blue base */
 }
-
 /* Header */
 .site-header{
   display:flex; align-items:center; justify-content:space-between;
@@ -83,3 +83,4 @@ button:active{transform:translateY(1px)}
   .row{flex-direction:column}
   button{width:100%}
 }
+
