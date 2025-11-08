@@ -5,14 +5,14 @@
   <title>Utuscribe — Coming Soon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, noarchive">
-  <meta name="description" content="Utuscribe — AI-first analysis and content quality. Private beta.">
+  <meta name="description" content="Utuscribe — Human insight, amplified by AI. Join the waitlist for early access.">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="brand">
-      <img src="utuscribe_logo.png" alt="Utuscribe logo" class="logo-img">
+      <img src="logo_Utuscribe_transparent.png" alt="Utuscribe logo" class="logo-img">
     </div>
     <nav class="site-nav">
       <a href="index.html" aria-current="page">Home</a>
@@ -24,32 +24,38 @@
   <main class="hero">
     <div class="card">
       <div class="pill">Private Beta</div>
-      <h1>We turn complex content into <span class="focus">decision-ready insight</span>.</h1>
+      <h1>We turn complex content into <span class="focus">clarity and creative insight</span>.</h1>
       <p class="teaser">
-        We’re building an AI-first analysis and content-quality platform.
-        Details are intentionally limited until launch. Early access is by invitation.
+        Utuscribe blends human creativity with thoughtful AI to transform ideas into meaningful, verifiable content.
+        We're building the next generation of content intelligence — and you're invited to be part of it.
       </p>
 
-      <form id="waitlist" class="row" onsubmit="return join(event)">
-        <input id="email" type="email" placeholder="your@email.com" aria-label="Email address" required>
-        <button type="submit">Join waitlist</button>
+      <!-- Buttondown waitlist form -->
+      <form
+        action="https://buttondown.email/api/emails/embed-subscribe/utuscribe"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/utuscribe', 'popupwindow')"
+        class="row">
+        <input type="email" name="email" id="email" placeholder="your@email.com" aria-label="Email address" required>
+        <button type="submit">Join Waitlist</button>
       </form>
 
-      <p class="micro">We will only contact you about early access. No newsletters, no spam.</p>
+      <p class="micro">No spam. Just early access and thoughtful updates from the Utuscribe team.</p>
     </div>
 
     <section class="points">
       <article>
         <h3>Accuracy</h3>
-        <p>Verified outputs with traceable sources for teams that can’t afford guesswork.</p>
+        <p>Verified outputs with traceable sources — designed for teams that can’t afford guesswork.</p>
       </article>
       <article>
         <h3>Speed</h3>
-        <p>Hours to minutes. Built for analysts, editors, and decision-makers.</p>
+        <p>From hours to minutes. Built for analysts, editors, and creators who value precision.</p>
       </article>
       <article>
         <h3>Control</h3>
-        <p>Your data, your guardrails. Private by default.</p>
+        <p>Your data, your guardrails. Private by default. Human-guided by design.</p>
       </article>
     </section>
   </main>
@@ -64,19 +70,9 @@
   </footer>
 
   <script>
-    // Simple mailto-based waitlist (swap later for Formspree/Buttondown if desired).
-    function join(e){
-      e.preventDefault();
-      var email = document.getElementById('email').value.trim();
-      var ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
-      if(!ok){ alert('Please enter a valid email.'); return false; }
-      var subject = encodeURIComponent('Utuscribe Waitlist');
-      var body = encodeURIComponent('Please add me to the Utuscribe private beta waitlist.\n\nEmail: ' + email);
-      window.location.href = 'mailto:hello@utuscribe.com?subject=' + subject + '&body=' + body;
-      return false;
-    }
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
