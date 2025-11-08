@@ -39,6 +39,9 @@ body {
 
 /* Hero */
 .hero {
+  padding-top: 2rem; /* keeps spacing above without affecting width */
+}
+.hero {
   opacity: 0;
   animation: fadeInHero 1.8s ease-in-out forwards;
   animation-delay: 2.2s; /* starts right after logo fade */
@@ -105,6 +108,7 @@ button:active{transform:translateY(1px)}
   .row{flex-direction:column}
   button{width:100%}
 }
+
 
 
 
