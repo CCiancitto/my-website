@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Responder AI — Utuscribe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="logo_Utuscribe_transparent.png" alt="Utuscribe logo" class="logo-img">
+    </div>
+    <nav class="site-nav">
+      <a href="responder.html" class="nav-link nav-link-active">Responder AI</a>
+      <a href="airscribe.html" class="nav-link">AirScribe</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="card">
+      <div class="pill">Responder AI</div>
+      <section class="hero-section active">
+        <h1>Responder AI: your AI receptionist and lead responder.</h1>
+        <p class="teaser">
+          Customer care that's dependable and consistent whenever you need it.
+          Responder AI greets callers, answers questions, captures leads, and helps
+          with scheduling so your business stays responsive without adding more staff.
+        </p>
+
+        <form class="demo-form" action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Chris Rivera" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Work email</label>
+              <input type="email" id="email" name="email" placeholder="you@business.com" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Mobile number for demo call</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+            </div>
+
+            <div class="field">
+              <label for="business-name">Business name</label>
+              <input type="text" id="business-name" name="business_name"
+                     placeholder="Sunset Family Dental" required>
+            </div>
+
+            <div class="field">
+              <label for="website">Business website</label>
+              <input type="url" id="website" name="website" placeholder="https://example.com">
+            </div>
+
+            <div class="field">
+              <label for="industry">Industry</label>
+              <select id="industry" name="industry">
+                <option value="">Select one (optional)</option>
+                <option value="healthcare">Healthcare / Clinics</option>
+                <option value="dental">Dental Practices</option>
+                <option value="home-services">Home Services</option>
+                <option value="real-estate">Real Estate</option>
+                <option value="professional-services">Professional Services</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="tone">Preferred tone for your AI receptionist</label>
+              <select id="tone" name="tone">
+                <option value="">Select a tone</option>
+                <option value="friendly">Friendly and warm</option>
+                <option value="professional">Professional and concise</option>
+                <option value="casual">Casual and conversational</option>
+                <option value="energetic">Energetic and upbeat</option>
+                <option value="formal">Formal and polite</option>
+                <option value="neutral">Neutral (no strong preference)</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" name="sms_consent" required>
+            <span>
+              By submitting this form, you agree to receive an automated demo call and limited
+              follow-up messages about Utuscribe's services at the number provided. Message and
+              data rates may apply. You can reply STOP to opt out or HELP for help. We do not
+              share or sell your mobile information with third parties for marketing or
+              promotional purposes.
+            </span>
+          </label>
+
+          <button type="submit">Request a Responder AI Demo</button>
+        </form>
+
+        <p class="micro">
+          This form is for demo and early-access conversations only.
+          We will follow up with details and scheduling once your request has been reviewed.
+        </p>
+
+        <section class="points">
+          <article>
+            <h3>Lead Response</h3>
+            <p>Answer inbound calls and messages quickly so potential customers are not left waiting or going to competitors.</p>
+          </article>
+          <article>
+            <h3>Scheduling and Intake</h3>
+            <p>Capture key details, help with scheduling requests, and hand off to your existing systems with less manual work.</p>
+          </article>
+          <article>
+            <h3>Consistent Experience</h3>
+            <p>Give customers a consistent first impression that reflects your brand and values every time they reach out.</p>
+          </article>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="links">
+      <a href="contact.html">Contact</a>
+      <span class="disabled-link">Careers (soon)</span>
+      <span class="disabled-link">Press (soon)</span>
+    </div>
+    <div class="copy">
+      © <span id="yr-responder"></span> Utuscribe, LLC. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("yr-responder").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
