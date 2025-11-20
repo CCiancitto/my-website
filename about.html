@@ -1,74 +1,76 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>About — Utuscribe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="brand">
-        <img src="logo_Utuscribe_transparent.png" alt="Utuscribe logo" class="logo-img">
-      </div>
-      <nav class="site-nav">
-        <a href="index.html" class="nav-link">Responder AI</a>
-        <a href="airscribe.html" class="nav-link">AirScribe</a>
-        <a href="about.html" class="nav-link nav-link-active">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <title>About — Utuscribe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="logo_Utuscribe_transparent.png" alt="Utuscribe logo" class="logo-img">
+    </div>
+    <nav class="site-nav">
+      <a href="responder.html" class="nav-link">Responder AI</a>
+      <a href="airscribe.html" class="nav-link">AirScribe</a>
+      <a href="about.html" class="nav-link nav-link-active">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
 
-    <main class="hero">
-      <div class="card">
-        <div class="pill">About</div>
-        <section class="hero-section active">
-          <h1 class="page-title">About</h1>
-          <p class="page-lead">
-            Utuscribe is an independent studio exploring how careful AI can support real people:
-            authors, analysts, and service businesses that depend on trust and clarity.
+  <main class="hero">
+    <div class="card">
+      <div class="pill">About</div>
+      <section class="hero-section active">
+        <h1 class="page-title">About</h1>
+        <p class="page-lead">
+          Utuscribe is an independent studio exploring how careful AI can support real people:
+          authors, analysts, and service businesses that depend on trust and clarity.
+        </p>
+
+        <div class="page-card">
+          <h2>Where we are now</h2>
+          <p>
+            We are in the early build phase, working toward our first working prototypes of
+            Responder AI and AirScribe. A small set of early adopters will be invited to test
+            core workflows before anything is made broadly available.
           </p>
+          <p>
+            The focus is simple: practical tools that are fast, reliable, and honest about
+            what they can and cannot do.
+          </p>
+        </div>
 
-          <div class="page-card">
-            <h2>Where we are now</h2>
-            <p>
-              We are in the early build phase, working toward our first working prototypes of
-              Responder AI and AirScribe. A small set of early adopters will be invited to test
-              core workflows before anything is made broadly available.
-            </p>
-            <p>
-              The focus is simple: practical tools that are fast, reliable, and honest about
-              what they can and cannot do.
-            </p>
-          </div>
+        <div class="page-card">
+          <h2>What we care about</h2>
+          <ul class="page-list">
+            <li>Respecting human judgment and keeping humans in the loop.</li>
+            <li>Designing for privacy, security, and future compliance requirements from day one.</li>
+            <li>Building systems that stay understandable, even as they become more capable.</li>
+          </ul>
+          <p>
+            As Utuscribe grows, more details about the roadmap will be shared here ahead of
+            larger announcements.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
 
-          <div class="page-card">
-            <h2>What we care about</h2>
-            <ul class="page-list">
-              <li>Respecting human judgment and keeping humans in the loop.</li>
-              <li>Designing for privacy, security, and future compliance requirements from day one.</li>
-              <li>Building systems that stay understandable, even as they become more capable.</li>
-            </ul>
-            <p>
-              As Utuscribe grows, more details about the roadmap will be shared here ahead of
-              larger announcements.
-            </p>
-          </div>
-        </section>
-      </div>
-    </main>
+  <footer class="site-footer">
+    <div class="links">
+      <a href="contact.html">Contact</a>
+      <span class="disabled-link">Careers (soon)</span>
+      <span class="disabled-link">Press (soon)</span>
+    </div>
+    <div class="copy">
+      © <span id="yr-about"></span> Utuscribe, LLC. All rights reserved.
+    </div>
+  </footer>
 
-    <footer class="site-footer">
-      <div class="links">
-        <a href="contact.html">Contact</a>
-        <span class="disabled-link">Careers (soon)</span>
-        <span class="disabled-link">Press (soon)</span>
-      </div>
-      <div class="copy">© <span id="yr-about"></span> Utuscribe, LLC. All rights reserved.</div>
-    </footer>
-
-    <script>
-      document.getElementById("yr-about").textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <script>
+    document.getElementById("yr-about").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
