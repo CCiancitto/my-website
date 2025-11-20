@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Utuscribe — AirScribe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AirScribe by Utuscribe: AI-powered content intelligence for authors and analysts.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand">
+          <img src="Utuscribe_logo_darkbkgd_transparent.png" alt="Utuscribe logo" class="brand-logo">
+          <span class="brand-name">Utuscribe</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          ☰
+        </button>
+
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Responder AI</a>
+          <a href="airscribe.html" class="nav-link nav-link-active">AirScribe</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero-secondary">
+        <div class="hero-inner">
+          <div class="hero-label">AirScribe</div>
+          <h1 class="hero-title hero-title-secondary">
+            Turn complex content into clarity and creative insight.
+          </h1>
+          <p class="hero-subtitle">
+            AirScribe blends human creativity with thoughtful AI to transform ideas into meaningful,
+            verifiable content. We are building the next generation of content intelligence, with
+            authors and analysts in mind from day one.
+          </p>
+
+          <a href="#airscribe-waitlist" class="primary-button">
+            Join AirScribe waitlist
+          </a>
+          <p class="hero-note">
+            No spam. Just early access invitations and practical updates from the Utuscribe team.
+          </p>
+        </div>
+      </section>
+
+      <section class="pillars" id="airscribe-waitlist">
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <h3>Accuracy</h3>
+            <p>
+              Verified outputs with traceable sources, designed for teams that cannot afford guesswork.
+            </p>
+          </article>
+          <article class="pillar-card">
+            <h3>Speed</h3>
+            <p>
+              From hours to minutes, while keeping drafts grounded and usable.
+            </p>
+          </article>
+          <article class="pillar-card">
+            <h3>Control</h3>
+            <p>
+              Your data, your guardrails. Private by default and human-guided by design.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="contact.html" class="footer-link">Contact</a>
+          <span class="footer-link disabled-link">Careers (soon)</span>
+          <span class="footer-link disabled-link">Press (soon)</span>
+        </div>
+        <div class="footer-meta">
+          <span>© 2025 Utuscribe LLC. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var navToggle = document.querySelector(".nav-toggle");
+        var nav = document.querySelector(".nav");
+        if (!navToggle || !nav) return;
+
+        navToggle.addEventListener("click", function () {
+          var expanded = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", String(!expanded));
+          nav.classList.toggle("nav-open", !expanded);
+        });
+      })();
+    </script>
+  </body>
+</html>
