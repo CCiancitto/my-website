@@ -10,35 +10,27 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header: logo + simple nav -->
+  <!-- Sticky header: logo + nav that drives hero content -->
   <header class="site-header">
     <div class="brand">
       <img src="Utuscribe_logo_darkbkgd_transparent.png" alt="Utuscribe logo" class="logo-img">
     </div>
     <nav class="site-nav">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="#" data-section="responder" class="nav-link nav-link-active">Responder AI</a>
+      <a href="#" data-section="airscribe" class="nav-link">AirScribe</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
 
   <!-- Main hero -->
   <main class="hero">
     <div class="card">
-      <div class="pill">Utuscribe Suite</div>
+      <!-- Product label updates when nav changes -->
+      <div class="pill" id="product-pill">Responder AI</div>
 
-      <!-- Product tabs inside the hero only -->
-      <div class="tabs" role="tablist" aria-label="Utuscribe products">
-        <button class="tab-button active" data-tab="responder" role="tab" aria-selected="true" aria-controls="tab-responder">
-          Responder AI
-        </button>
-        <button class="tab-button" data-tab="airscribe" role="tab" aria-selected="false" aria-controls="tab-airscribe">
-          AirScribe
-        </button>
-      </div>
-
-      <!-- Responder AI panel -->
-      <section id="tab-responder" class="tab-panel active" role="tabpanel" aria-labelledby="tab-responder">
+      <!-- Responder AI section -->
+      <section id="section-responder" class="hero-section active">
         <h1>Responder AI: your AI receptionist and lead responder.</h1>
         <p class="teaser">
           Customer care that's dependable and consistent whenever you need it.
@@ -135,8 +127,8 @@
         </section>
       </section>
 
-      <!-- AirScribe panel -->
-      <section id="tab-airscribe" class="tab-panel" role="tabpanel" aria-labelledby="tab-airscribe">
+      <!-- AirScribe section -->
+      <section id="section-airscribe" class="hero-section">
         <h1>We turn complex content into <span class="focus">clarity and creative insight</span>.</h1>
         <p class="teaser">
           AirScribe blends human creativity with thoughtful AI to transform ideas into meaningful, verifiable content.
@@ -188,28 +180,46 @@
     // Year in footer
     document.getElementById("yr").textContent = new Date().getFullYear();
 
-    // Simple tab switching
+    // Header nav controls hero sections for Responder AI / AirScribe
     (function () {
-      var buttons = document.querySelectorAll(".tab-button");
-      var panels = document.querySelectorAll(".tab-panel");
+      var links = document.querySelectorAll(".site-nav a[data-section]");
+      var pill = document.getElementById("product-pill");
+      var sections = {
+        responder: document.getElementById("section-responder"),
+        airscribe: document.getElementById("section-airscribe")
+      };
 
-      function activateTab(target) {
-        buttons.forEach(function (btn) {
-          var isActive = btn.getAttribute("data-tab") === target;
-          btn.classList.toggle("active", isActive);
-          btn.setAttribute("aria-selected", isActive ? "true" : "false");
+      function showSection(key) {
+        // Toggle nav active state
+        links.forEach(function (link) {
+          var isActive = link.getAttribute("data-section") === key;
+          if (isActive) {
+            link.classList.add("nav-link-active");
+          } else {
+            link.classList.remove("nav-link-active");
+          }
         });
 
-        panels.forEach(function (panel) {
-          var isActive = panel.id === "tab-" + target;
-          panel.classList.toggle("active", isActive);
+        // Toggle hero sections
+        Object.keys(sections).forEach(function (name) {
+          if (name === key) {
+            sections[name].classList.add("active");
+          } else {
+            sections[name].classList.remove("active");
+          }
         });
+
+        // Update pill label
+        pill.textContent = key === "responder" ? "Responder AI" : "AirScribe";
       }
 
-      buttons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var tab = btn.getAttribute("data-tab");
-          activateTab(tab);
+      links.forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          var key = link.getAttribute("data-section");
+          if (key === "responder" || key === "airscribe") {
+            showSection(key);
+          }
         });
       });
     })();
