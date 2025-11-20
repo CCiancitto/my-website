@@ -12,113 +12,85 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="brand">
-          <img
-            src="logo_Utuscribe_transparent.png"
-            alt="Utuscribe logo"
-            class="brand-logo"
-          >
-        </a>
-
-        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
-          ☰
-        </button>
-
-        <nav class="nav">
-          <a href="index.html" class="nav-link">Responder AI</a>
-          <a href="airscribe.html" class="nav-link nav-link-active">AirScribe</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
+      <div class="brand">
+        <img src="logo_Utuscribe_transparent.png" alt="Utuscribe logo" class="logo-img">
       </div>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Responder AI</a>
+        <a href="airscribe.html" class="nav-link nav-link-active">AirScribe</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
     </header>
 
-    <main>
-      <section class="hero hero-secondary">
-        <div class="hero-inner">
-          <div class="hero-label">AirScribe</div>
-          <h1 class="hero-title hero-title-secondary">
-            Turn complex content into clarity and creative insight.
-          </h1>
-          <p class="hero-subtitle">
+    <main class="hero">
+      <div class="card">
+        <div class="pill">AirScribe</div>
+
+        <section class="hero-section active">
+          <h1>We turn complex content into <span class="focus">clarity and creative insight</span>.</h1>
+          <p class="teaser">
             AirScribe blends human creativity with thoughtful AI to transform ideas into meaningful,
             verifiable content. We are building the next generation of content intelligence, with
             authors and analysts in mind from day one.
           </p>
 
-          <!-- Waitlist signup form -->
-          <form class="inline-form" method="post" action="#">
-            <div class="form-field form-field-inline">
-              <label for="airscribe-email" class="sr-only">Email address</label>
-              <input
-                type="email"
-                id="airscribe-email"
-                name="email"
-                placeholder="you@example.com"
-                required
-              >
-            </div>
-            <button type="submit" class="primary-button">
-              Join AirScribe waitlist
-            </button>
+          <form
+            action="https://buttondown.email/api/emails/embed-subscribe/utuscribe"
+            method="post"
+            target="popupwindow"
+            onsubmit="window.open('https://buttondown.email/utuscribe', 'popupwindow')"
+            class="row"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              aria-label="Email address"
+              required
+            >
+            <button type="submit">Join AirScribe Waitlist</button>
           </form>
 
-          <p class="hero-note">
+          <p class="micro">
             No spam. Just early access invitations and practical updates from the Utuscribe team.
           </p>
-        </div>
-      </section>
 
-      <section class="pillars" id="airscribe-waitlist">
-        <div class="pillars-grid">
-          <article class="pillar-card">
-            <h3>Accuracy</h3>
-            <p>
-              Verified outputs with traceable sources, designed for teams that cannot afford guesswork.
-            </p>
-          </article>
-          <article class="pillar-card">
-            <h3>Speed</h3>
-            <p>
-              From hours to minutes, while keeping drafts grounded and usable.
-            </p>
-          </article>
-          <article class="pillar-card">
-            <h3>Control</h3>
-            <p>
-              Your data, your guardrails. Private by default and human-guided by design.
-            </p>
-          </article>
-        </div>
-      </section>
+          <section class="points">
+            <article>
+              <h3>Accuracy</h3>
+              <p>
+                Verified outputs with traceable sources, designed for teams that cannot afford guesswork.
+              </p>
+            </article>
+            <article>
+              <h3>Speed</h3>
+              <p>
+                From hours to minutes, while keeping drafts grounded and usable.
+              </p>
+            </article>
+            <article>
+              <h3>Control</h3>
+              <p>
+                Your data, your guardrails. Private by default and human-guided by design.
+              </p>
+            </article>
+          </section>
+        </section>
+      </div>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-links">
-          <a href="contact.html" class="footer-link">Contact</a>
-          <span class="footer-link disabled-link">Careers (soon)</span>
-          <span class="footer-link disabled-link">Press (soon)</span>
-        </div>
-        <div class="footer-meta">
-          <span>© 2025 Utuscribe, LLC. All rights reserved.</span>
-        </div>
+      <div class="links">
+        <a href="contact.html">Contact</a>
+        <span class="disabled-link">Careers (soon)</span>
+        <span class="disabled-link">Press (soon)</span>
       </div>
+      <div class="copy">© <span id="yr-airscribe"></span> Utuscribe, LLC. All rights reserved.</div>
     </footer>
 
     <script>
-      (function () {
-        var navToggle = document.querySelector(".nav-toggle");
-        var nav = document.querySelector(".nav");
-        if (!navToggle || !nav) return;
-
-        navToggle.addEventListener("click", function () {
-          var expanded = navToggle.getAttribute("aria-expanded") === "true";
-          navToggle.setAttribute("aria-expanded", String(!expanded));
-          nav.classList.toggle("nav-open", !expanded);
-        });
-      })();
+      document.getElementById("yr-airscribe").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
