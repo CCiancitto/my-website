@@ -15,13 +15,18 @@ body {
 }
 
 /* =========================
-   Header
+   Header (sticky)
 ========================= */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
+  padding: 0.8rem 2rem;
+  background: #0a1018;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .brand {
@@ -32,7 +37,7 @@ body {
 
 /* Logo capped so it doesn't dominate the page */
 .logo-img {
-  max-height: 80px;
+  max-height: 70px;
   width: auto;
 }
 
@@ -43,19 +48,23 @@ body {
   margin-left: 14px;
   font-weight: 600;
   font-size: 14px;
-  opacity: .85;
+  opacity: .75;
 }
-.site-nav a[aria-current="page"] { opacity: 1; }
-.site-nav a:hover { text-decoration: underline; }
+.site-nav .nav-link-active {
+  opacity: 1;
+}
+.site-nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
 
 /* =========================
    Hero
 ========================= */
-/* Center the hero content */
 .hero {
   display: flex;
   justify-content: center;
-  padding: 0 1.25rem 2.25rem;
+  padding: 1.5rem 1.25rem 2.25rem;
 }
 
 /* Card stays constrained and centered */
@@ -71,6 +80,7 @@ body {
     inset 0 1px 0 rgba(255,255,255,.06);
 }
 
+/* Label showing which product is active */
 .pill {
   display: inline-block;
   font-size: 12px; font-weight: 700; letter-spacing: .2px;
@@ -78,7 +88,7 @@ body {
   background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
   padding: 6px 10px;
   border-radius: 999px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 h1 { margin: 8px 0 10px; font-size: 28px; }
@@ -86,38 +96,11 @@ h1 { margin: 8px 0 10px; font-size: 28px; }
 
 .teaser { color: #a7b2bf; line-height: 1.6; margin: 0 0 12px; }
 
-/* =========================
-   Tabs (inside hero)
-========================= */
-.tabs {
-  display: inline-flex;
-  margin: 4px 0 14px;
-  border-radius: 999px;
-  background: rgba(4, 10, 16, 0.85);
-  padding: 3px;
-  border: 1px solid rgba(255,255,255,.06);
-}
-
-.tab-button {
-  border: 0;
-  background: transparent;
-  color: #cfe6f7;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  opacity: .7;
-}
-.tab-button.active {
-  background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
-  color: #06202b;
-  opacity: 1;
-}
-.tab-panel {
+/* Product sections (only one visible at a time) */
+.hero-section {
   display: none;
 }
-.tab-panel.active {
+.hero-section.active {
   display: block;
 }
 
@@ -247,17 +230,31 @@ button:active { transform: translateY(1px); }
 .copy { color: #a7b2bf; font-size: 12px; }
 
 /* =========================
-   Responsive
+   Responsive tweaks
 ========================= */
 @media (max-width: 900px) {
-  .site-header { padding: 1rem 1.25rem; }
-  .hero { padding: 0 1rem 2rem; }
-  .card { padding: 22px; }
+  .site-header {
+    padding: 0.8rem 1.25rem;
+  }
+  .hero {
+    padding: 1.25rem 1rem 2rem;
+  }
+  .card {
+    padding: 22px;
+  }
 }
 
 @media (max-width: 720px) {
-  .points { grid-template-columns: 1fr; }
-  .row { flex-direction: column; }
-  button { width: 100%; }
-  .form-grid { grid-template-columns: 1fr; }
+  .points {
+    grid-template-columns: 1fr;
+  }
+  .row {
+    flex-direction: column;
+  }
+  button {
+    width: 100%;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
 }
