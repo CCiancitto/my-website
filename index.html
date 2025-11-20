@@ -10,15 +10,28 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Shared header -->
   <header class="site-header">
-    <div class="brand">
-      <img src="Utuscribe_logo_darkbkgd_transparent.png" alt="Utuscribe logo" class="logo-img">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <img
+          src="logo_Utuscribe_transparent.png"
+          alt="Utuscribe logo"
+          class="brand-logo"
+        >
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link nav-link-active">Responder AI</a>
+        <a href="airscribe.html" class="nav-link">AirScribe</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
     </div>
-    <nav class="site-nav">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
   </header>
 
   <main class="hero">
@@ -89,11 +102,11 @@
               <label for="tone">Preferred tone for your AI receptionist</label>
               <select id="tone" name="tone">
                 <option value="">Select a tone</option>
-                <option value="friendly">Friendly & warm</option>
-                <option value="professional">Professional & concise</option>
-                <option value="casual">Casual & conversational</option>
-                <option value="energetic">Energetic & upbeat</option>
-                <option value="formal">Formal & polite</option>
+                <option value="friendly">Friendly and warm</option>
+                <option value="professional">Professional and concise</option>
+                <option value="casual">Casual and conversational</option>
+                <option value="energetic">Energetic and upbeat</option>
+                <option value="formal">Formal and polite</option>
                 <option value="neutral">Neutral (no strong preference)</option>
               </select>
             </div>
@@ -101,27 +114,29 @@
 
           <label class="consent">
             <input type="checkbox" name="sms_consent" required>
-            By submitting this form, you agree to receive an automated demo call and limited follow-up
-            messages about Utuscribe’s services at the number provided. Message and data rates may apply.
-            You can reply STOP to opt out or HELP for help. We do not share or sell your mobile information
-            with third parties for marketing or promotional purposes.
+            <span>
+              By submitting this form, you agree to receive an automated demo call and limited follow-up
+              messages about Utuscribe's services at the number provided. Message and data rates may apply.
+              You can reply STOP to opt out or HELP for help. We do not share or sell your mobile information
+              with third parties for marketing or promotional purposes.
+            </span>
           </label>
 
-          <button type="submit">Request a Responder AI Demo</button>
+          <button type="submit" class="primary-button">Request a Responder AI Demo</button>
         </form>
 
         <p class="micro">
-          This form is for demo and early-access conversations only. We’ll follow up with details and scheduling
+          This form is for demo and early-access conversations only. We will follow up with details and scheduling
           once your request has been reviewed.
         </p>
 
         <section class="points">
           <article>
             <h3>Lead Response</h3>
-            <p>Answer inbound calls and messages quickly so potential customers aren’t left waiting or going to competitors.</p>
+            <p>Answer inbound calls and messages quickly so potential customers are not left waiting or going to competitors.</p>
           </article>
           <article>
-            <h3>Scheduling & Intake</h3>
+            <h3>Scheduling and Intake</h3>
             <p>Capture key details, help with scheduling requests, and hand off to your existing systems with less manual work.</p>
           </article>
           <article>
@@ -131,12 +146,12 @@
         </section>
       </section>
 
-      <!-- AirScribe panel (original content moved here) -->
+      <!-- AirScribe panel (summary; full page at airscribe.html) -->
       <section id="tab-airscribe" class="tab-panel" role="tabpanel" aria-labelledby="tab-airscribe">
         <h1>We turn complex content into <span class="focus">clarity and creative insight</span>.</h1>
         <p class="teaser">
           AirScribe blends human creativity with thoughtful AI to transform ideas into meaningful, verifiable content.
-          We’re building the next generation of content intelligence — and you’re invited to be part of it.
+          We are building the next generation of content intelligence, and you are invited to be part of it.
         </p>
 
         <!-- Original Buttondown waitlist form preserved for AirScribe -->
@@ -145,9 +160,10 @@
           method="post"
           target="popupwindow"
           onsubmit="window.open('https://buttondown.email/utuscribe', 'popupwindow')"
-          class="row">
+          class="row"
+        >
           <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required>
-          <button type="submit">Join AirScribe Waitlist</button>
+          <button type="submit" class="primary-button">Join AirScribe Waitlist</button>
         </form>
 
         <p class="micro">No spam. Just early access and thoughtful updates from the Utuscribe team.</p>
@@ -155,7 +171,7 @@
         <section class="points">
           <article>
             <h3>Accuracy</h3>
-            <p>Verified outputs with traceable sources — designed for teams that can’t afford guesswork.</p>
+            <p>Verified outputs with traceable sources, designed for teams that cannot afford guesswork.</p>
           </article>
           <article>
             <h3>Speed</h3>
@@ -163,7 +179,7 @@
           </article>
           <article>
             <h3>Control</h3>
-            <p>Your data, your guardrails. Private by default. Human-guided by design.</p>
+            <p>Your data, your guardrails. Private by default and human-guided by design.</p>
           </article>
         </section>
       </section>
@@ -171,39 +187,56 @@
   </main>
 
   <footer class="site-footer">
-    <div class="links">
-      <a href="mailto:hello@utuscribe.com">Contact</a>
-      <a href="#" aria-disabled="true" onclick="return false;">Careers (soon)</a>
-      <a href="#" aria-disabled="true" onclick="return false;">Press (soon)</a>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="contact.html" class="footer-link">Contact</a>
+        <span class="footer-link disabled-link">Careers (soon)</span>
+        <span class="footer-link disabled-link">Press (soon)</span>
+      </div>
+      <div class="footer-meta">
+        <span>© <span id="yr"></span> Utuscribe, LLC. All rights reserved.</span>
+      </div>
     </div>
-    <div class="copy">© <span id="yr"></span> Utuscribe, LLC. All rights reserved.</div>
   </footer>
 
   <script>
-    // Year
-    document.getElementById('yr').textContent = new Date().getFullYear();
+    // Year in footer
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    (function () {
+      var navToggle = document.querySelector(".nav-toggle");
+      var nav = document.querySelector(".nav");
+      if (!navToggle || !nav) return;
+
+      navToggle.addEventListener("click", function () {
+        var expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+        nav.classList.toggle("nav-open", !expanded);
+      });
+    })();
 
     // Simple tab switching
     (function () {
-      var buttons = document.querySelectorAll('.tab-button');
-      var panels = document.querySelectorAll('.tab-panel');
+      var buttons = document.querySelectorAll(".tab-button");
+      var panels = document.querySelectorAll(".tab-panel");
 
       function activateTab(target) {
         buttons.forEach(function (btn) {
-          var isActive = btn.getAttribute('data-tab') === target;
-          btn.classList.toggle('active', isActive);
-          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          var isActive = btn.getAttribute("data-tab") === target;
+          btn.classList.toggle("active", isActive);
+          btn.setAttribute("aria-selected", isActive ? "true" : "false");
         });
 
         panels.forEach(function (panel) {
-          var isActive = panel.id === 'tab-' + target;
-          panel.classList.toggle('active', isActive);
+          var isActive = panel.id === "tab-" + target;
+          panel.classList.toggle("active", isActive);
         });
       }
 
       buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var tab = btn.getAttribute('data-tab');
+        btn.addEventListener("click", function () {
+          var tab = btn.getAttribute("data-tab");
           activateTab(tab);
         });
       });
