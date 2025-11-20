@@ -8,29 +8,18 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="brand">
-          <img
-            src="logo_Utuscribe_transparent.png"
-            alt="Utuscribe logo"
-            class="brand-logo"
-          >
-        </a>
-
-        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
-          ☰
-        </button>
-
-        <nav class="nav">
-          <a href="index.html" class="nav-link">Responder AI</a>
-          <a href="airscribe.html" class="nav-link">AirScribe</a>
-          <a href="about.html" class="nav-link nav-link-active">About</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
+      <div class="brand">
+        <img src="logo_Utuscribe_transparent.png" alt="Utuscribe logo" class="logo-img">
       </div>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Responder AI</a>
+        <a href="airscribe.html" class="nav-link">AirScribe</a>
+        <a href="about.html" class="nav-link nav-link-active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
     </header>
 
-    <main>
+    <main class="page-main">
       <section class="page-section">
         <div class="page-inner">
           <h1 class="page-title">About</h1>
@@ -69,30 +58,16 @@
     </main>
 
     <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-links">
-          <a href="contact.html" class="footer-link">Contact</a>
-          <span class="footer-link disabled-link">Careers (soon)</span>
-          <span class="footer-link disabled-link">Press (soon)</span>
-        </div>
-        <div class="footer-meta">
-          <span>© 2025 Utuscribe, LLC. All rights reserved.</span>
-        </div>
+      <div class="links">
+        <a href="contact.html">Contact</a>
+        <span class="disabled-link">Careers (soon)</span>
+        <span class="disabled-link">Press (soon)</span>
       </div>
+      <div class="copy">© <span id="yr-about"></span> Utuscribe, LLC. All rights reserved.</div>
     </footer>
 
     <script>
-      (function () {
-        var navToggle = document.querySelector(".nav-toggle");
-        var nav = document.querySelector(".nav");
-        if (!navToggle || !nav) return;
-
-        navToggle.addEventListener("click", function () {
-          var expanded = navToggle.getAttribute("aria-expanded") === "true";
-          navToggle.setAttribute("aria-expanded", String(!expanded));
-          nav.classList.toggle("nav-open", !expanded);
-        });
-      })();
+      document.getElementById("yr-about").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
