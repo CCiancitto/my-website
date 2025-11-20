@@ -61,11 +61,12 @@ main {
 }
 
 .brand-logo {
-  width: 38px;
+  width: 56px;
   height: auto;
   display: block;
 }
 
+/* We keep brand-name style in case we ever restore text */
 .brand-name {
   font-weight: 600;
   font-size: 1.05rem;
@@ -171,7 +172,7 @@ main {
   color: #9ca3af;
 }
 
-/* Request demo card (Responder AI) */
+/* Request demo card */
 
 .request-demo {
   padding: 0 1.5rem 3rem;
@@ -189,7 +190,7 @@ main {
 }
 
 .demo-form {
-  margin-top: 0.75rem;
+  margin-top: 1.2rem;
 }
 
 /* Form layout */
@@ -337,6 +338,8 @@ textarea:focus {
 
 .pillars-inline {
   padding: 0;
+  margin: 0;
+  max-width: none;
 }
 
 .pillars-grid {
