@@ -26,7 +26,7 @@
   <!-- Main hero -->
   <main class="hero">
     <div class="card">
-      <!-- Product label updates when nav changes -->
+      <!-- Product label now looks like a subtle title, not a button -->
       <div class="pill" id="product-pill">Responder AI</div>
 
       <!-- Responder AI section -->
@@ -129,6 +129,7 @@
 
       <!-- AirScribe section -->
       <section id="section-airscribe" class="hero-section">
+        <div class="pill">AirScribe</div>
         <h1>We turn complex content into <span class="focus">clarity and creative insight</span>.</h1>
         <p class="teaser">
           AirScribe blends human creativity with thoughtful AI to transform ideas into meaningful, verifiable content.
@@ -180,10 +181,12 @@
     // Year in footer
     document.getElementById("yr").textContent = new Date().getFullYear();
 
-    // Header nav controls hero sections for Responder AI / AirScribe
+    // Header nav controls hero sections for Responder AI / AirScribe on the homepage
     (function () {
       var links = document.querySelectorAll(".site-nav a[data-section]");
       var pill = document.getElementById("product-pill");
+      if (!pill) return;
+
       var sections = {
         responder: document.getElementById("section-responder"),
         airscribe: document.getElementById("section-airscribe")
