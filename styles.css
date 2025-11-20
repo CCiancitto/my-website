@@ -11,7 +11,7 @@ body {
   background:
     radial-gradient(1200px 600px at 85% -10%, rgba(92,200,255,0.10), transparent 60%),
     radial-gradient(1000px 500px at -10% 110%, rgba(160,255,204,0.08), transparent 60%),
-    #0a1018; /* dark metallic blue base */
+    #0a1018;
 }
 
 /* =========================
@@ -96,7 +96,7 @@ body {
 
 .card {
   width: 100%;
-  max-width: 760px;
+  max-width: 860px;
   background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 20px;
@@ -106,7 +106,7 @@ body {
     inset 0 1px 0 rgba(255,255,255,.06);
 }
 
-/* Pill label (now a subtle title, not a button) */
+/* Pill label (subtle, not a button) */
 .pill {
   display: inline-block;
   font-size: 11px;
@@ -132,9 +132,102 @@ h1 {
   margin: 0 0 12px;
 }
 
-/* Only one hero section visible at a time on index */
-.hero-section { display: none; }
-.hero-section.active { display: block; }
+/* Only used so we can reuse the same markup */
+.hero-section { display: block; }
+
+/* =========================
+   Product grid on index
+========================= */
+.page-title {
+  font-size: 28px;
+  margin: 4px 0 6px;
+}
+
+.page-lead {
+  color: #a7b2bf;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 6px;
+}
+
+.product-card {
+  background: #0f151d;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.09);
+  padding: 18px 18px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.product-card h2 {
+  margin: 6px 0 8px;
+  font-size: 20px;
+}
+
+.product-card p {
+  color: #c2d5e4;
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+
+.product-card ul {
+  padding-left: 1.1rem;
+  margin: 0 0 12px;
+  color: #a7b2bf;
+  font-size: 14px;
+}
+
+.product-card li {
+  margin-bottom: 3px;
+}
+
+.product-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: rgba(92,200,255,0.10);
+  border: 1px solid rgba(92,200,255,0.40);
+  color: #bdefff;
+}
+
+/* Gradient product button */
+.product-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #06202b;
+  background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
+  box-shadow: 0 8px 20px rgba(0,0,0,.4);
+  border: none;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    filter 0.1s ease;
+}
+
+.product-button:hover {
+  filter: brightness(1.04);
+  box-shadow: 0 11px 26px rgba(0,0,0,.55);
+}
+
+.product-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 7px 18px rgba(0,0,0,.45);
+}
 
 /* =========================
    Forms
@@ -219,7 +312,7 @@ textarea:focus {
   margin-top: 3px;
 }
 
-/* Button */
+/* Primary button */
 button {
   height: 44px;
   border-radius: 12px;
@@ -230,10 +323,12 @@ button {
   background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
   color: #06202b;
   padding: 0 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.4);
 }
 
 button:active {
   transform: translateY(1px);
+  box-shadow: 0 5px 14px rgba(0,0,0,.45);
 }
 
 /* =========================
@@ -265,18 +360,6 @@ button:active {
 /* =========================
    Page content inside cards (About / Contact)
 ========================= */
-.page-title {
-  font-size: 28px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
-.page-lead {
-  color: #a7b2bf;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
 .page-card {
   background: #11151a;
   border-radius: 14px;
@@ -381,6 +464,10 @@ button:active {
 }
 
 @media (max-width: 720px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
   .points {
     grid-template-columns: 1fr;
   }
