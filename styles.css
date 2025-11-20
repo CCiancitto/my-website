@@ -41,14 +41,14 @@ body {
   width: auto;
 }
 
-/* Nav styled like pill buttons */
+/* Nav styled as pill buttons */
 .site-nav {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   padding: 3px;
   border-radius: 999px;
-  background: rgba(6, 12, 18, 0.9);
+  background: rgba(6, 12, 18, 0.95);
   border: 1px solid rgba(255,255,255,.08);
 }
 
@@ -56,31 +56,37 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 90px;
-  padding: 6px 12px;
+  min-width: 110px;
+  padding: 7px 14px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
   color: #cfe6f7;
-  background: transparent;
-  opacity: 0.75;
-  transition: background 0.15s ease, opacity 0.15s ease, color 0.15s ease;
+  background: #0f171f;
+  border: 1px solid rgba(255,255,255,0.08);
+  opacity: 0.8;
+  transition:
+    background 0.15s ease,
+    opacity 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .site-nav .nav-link-active {
   background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
+  border-color: transparent;
   color: #06202b;
   opacity: 1;
 }
 
 .site-nav .nav-link:hover:not(.nav-link-active) {
   opacity: 1;
-  background: rgba(255,255,255,0.08);
+  background: #141f2a;
 }
 
 /* =========================
-   Hero (Responder / AirScribe)
+   Hero + Card layout
 ========================= */
 .hero {
   display: flex;
@@ -100,17 +106,17 @@ body {
     inset 0 1px 0 rgba(255,255,255,.06);
 }
 
-/* Product label */
+/* Pill label (now a subtle title, not a button) */
 .pill {
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: .2px;
-  color: #0b1a22;
-  background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
-  padding: 6px 10px;
-  border-radius: 999px;
-  margin-bottom: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a7b2bf;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 4px;
 }
 
 h1 {
@@ -257,24 +263,11 @@ button:active {
 }
 
 /* =========================
-   Page layouts (About / Contact)
+   Page content inside cards (About / Contact)
 ========================= */
-.page-main {
-  padding: 1.5rem 1.25rem 2.5rem;
-}
-
-.page-section {
-  display: flex;
-  justify-content: center;
-}
-
-.page-inner {
-  width: 100%;
-  max-width: 760px;
-}
-
 .page-title {
   font-size: 28px;
+  margin-top: 4px;
   margin-bottom: 4px;
 }
 
@@ -384,10 +377,6 @@ button:active {
 
   .card {
     padding: 22px;
-  }
-
-  .page-main {
-    padding: 1.25rem 1rem 2.25rem;
   }
 }
 
