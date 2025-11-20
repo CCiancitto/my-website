@@ -2,168 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Utuscribe — Responder AI & AirScribe</title>
+  <title>Utuscribe — AI tools for careful automation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, noarchive">
-  <meta name="description" content="Responder AI provides dependable, consistent customer care whenever you need it. AirScribe transforms complex ideas into clear, publish-ready content.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Sticky header: logo + nav that drives hero content -->
   <header class="site-header">
     <div class="brand">
       <img src="logo_Utuscribe_transparent.png" alt="Utuscribe logo" class="logo-img">
     </div>
     <nav class="site-nav">
-      <a href="#" data-section="responder" class="nav-link nav-link-active">Responder AI</a>
-      <a href="#" data-section="airscribe" class="nav-link">AirScribe</a>
+      <a href="responder.html" class="nav-link">Responder AI</a>
+      <a href="airscribe.html" class="nav-link">AirScribe</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </nav>
   </header>
 
-  <!-- Main hero -->
   <main class="hero">
     <div class="card">
-      <!-- Product label now looks like a subtle title, not a button -->
-      <div class="pill" id="product-pill">Responder AI</div>
+      <h1 class="page-title">Utuscribe Suite</h1>
+      <p class="page-lead">
+        Utuscribe builds careful AI tools that help real people do more with less friction.
+        Start with a receptionist that never gets tired, or a writing partner that turns
+        complex ideas into clear, publish-ready content.
+      </p>
 
-      <!-- Responder AI section -->
-      <section id="section-responder" class="hero-section active">
-        <h1>Responder AI: your AI receptionist and lead responder.</h1>
-        <p class="teaser">
-          Customer care that's dependable and consistent whenever you need it.
-          Responder AI greets callers, answers questions, captures leads, and helps with scheduling
-          so your business stays responsive without adding more staff.
-        </p>
+      <section class="product-grid">
+        <!-- Responder AI card -->
+        <article class="product-card">
+          <div class="product-pill">Responder AI</div>
+          <h2>AI receptionist and lead responder</h2>
+          <p>
+            Greet callers, answer questions, capture leads, and help with scheduling so your
+            business stays responsive without adding more staff.
+          </p>
+          <ul>
+            <li>Fast answers via SMS and voice.</li>
+            <li>Lead capture and intake questions customized to your practice.</li>
+            <li>Consistent customer care whenever you need it.</li>
+          </ul>
+          <a href="responder.html" class="product-button">
+            Try a Responder AI demo
+          </a>
+        </article>
 
-        <!-- Request Demo form (to be wired to Echo/Stripe later) -->
-        <form class="demo-form" action="#" method="post">
-          <div class="form-grid">
-            <div class="field">
-              <label for="name">Your name</label>
-              <input type="text" id="name" name="name" placeholder="Chris Rivera" required>
-            </div>
-
-            <div class="field">
-              <label for="email">Work email</label>
-              <input type="email" id="email" name="email" placeholder="you@business.com" required>
-            </div>
-
-            <div class="field">
-              <label for="phone">Mobile number for demo call</label>
-              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
-            </div>
-
-            <div class="field">
-              <label for="business-name">Business name</label>
-              <input type="text" id="business-name" name="business_name" placeholder="Sunset Family Dental" required>
-            </div>
-
-            <div class="field">
-              <label for="website">Business website</label>
-              <input type="url" id="website" name="website" placeholder="https://example.com">
-            </div>
-
-            <div class="field">
-              <label for="industry">Industry</label>
-              <select id="industry" name="industry">
-                <option value="">Select one (optional)</option>
-                <option value="healthcare">Healthcare / Clinics</option>
-                <option value="dental">Dental Practices</option>
-                <option value="home-services">Home Services</option>
-                <option value="real-estate">Real Estate</option>
-                <option value="professional-services">Professional Services</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="tone">Preferred tone for your AI receptionist</label>
-              <select id="tone" name="tone">
-                <option value="">Select a tone</option>
-                <option value="friendly">Friendly and warm</option>
-                <option value="professional">Professional and concise</option>
-                <option value="casual">Casual and conversational</option>
-                <option value="energetic">Energetic and upbeat</option>
-                <option value="formal">Formal and polite</option>
-                <option value="neutral">Neutral (no strong preference)</option>
-              </select>
-            </div>
-          </div>
-
-          <label class="consent">
-            <input type="checkbox" name="sms_consent" required>
-            <span>
-              By submitting this form, you agree to receive an automated demo call and limited follow-up
-              messages about Utuscribe's services at the number provided. Message and data rates may apply.
-              You can reply STOP to opt out or HELP for help. We do not share or sell your mobile information
-              with third parties for marketing or promotional purposes.
-            </span>
-          </label>
-
-          <button type="submit">Request a Responder AI Demo</button>
-        </form>
-
-        <p class="micro">
-          This form is for demo and early-access conversations only. We will follow up with details and scheduling
-          once your request has been reviewed.
-        </p>
-
-        <section class="points">
-          <article>
-            <h3>Lead Response</h3>
-            <p>Answer inbound calls and messages quickly so potential customers are not left waiting or going to competitors.</p>
-          </article>
-          <article>
-            <h3>Scheduling and Intake</h3>
-            <p>Capture key details, help with scheduling requests, and hand off to your existing systems with less manual work.</p>
-          </article>
-          <article>
-            <h3>Consistent Experience</h3>
-            <p>Give customers a consistent first impression that reflects your brand and values every time they reach out.</p>
-          </article>
-        </section>
-      </section>
-
-      <!-- AirScribe section -->
-      <section id="section-airscribe" class="hero-section">
-        <div class="pill">AirScribe</div>
-        <h1>We turn complex content into <span class="focus">clarity and creative insight</span>.</h1>
-        <p class="teaser">
-          AirScribe blends human creativity with thoughtful AI to transform ideas into meaningful, verifiable content.
-          We are building the next generation of content intelligence, and you are invited to be part of it.
-        </p>
-
-        <!-- Buttondown waitlist form -->
-        <form
-          action="https://buttondown.email/api/emails/embed-subscribe/utuscribe"
-          method="post"
-          target="popupwindow"
-          onsubmit="window.open('https://buttondown.email/utuscribe', 'popupwindow')"
-          class="row"
-        >
-          <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required>
-          <button type="submit">Join AirScribe Waitlist</button>
-        </form>
-
-        <p class="micro">No spam. Just early access and thoughtful updates from the Utuscribe team.</p>
-
-        <section class="points">
-          <article>
-            <h3>Accuracy</h3>
-            <p>Verified outputs with traceable sources, designed for teams that cannot afford guesswork.</p>
-          </article>
-          <article>
-            <h3>Speed</h3>
-            <p>From hours to minutes. Built for analysts, editors, and creators who value precision.</p>
-          </article>
-          <article>
-            <h3>Control</h3>
-            <p>Your data, your guardrails. Private by default and human-guided by design.</p>
-          </article>
-        </section>
+        <!-- AirScribe card -->
+        <article class="product-card">
+          <div class="product-pill">AirScribe</div>
+          <h2>Thought-to-draft content intelligence</h2>
+          <p>
+            Turn messy notes, research, or transcripts into clear, structured drafts you can
+            trust, with citations and control over voice and tone.
+          </p>
+          <ul>
+            <li>Draft reports, chapters, and summaries in a fraction of the time.</li>
+            <li>Traceable outputs so you can see where ideas come from.</li>
+            <li>Built for authors, analysts, and teams who care about accuracy.</li>
+          </ul>
+          <a href="airscribe.html" class="product-button">
+            Join the AirScribe waitlist
+          </a>
+        </article>
       </section>
     </div>
   </main>
@@ -174,58 +74,13 @@
       <span class="disabled-link">Careers (soon)</span>
       <span class="disabled-link">Press (soon)</span>
     </div>
-    <div class="copy">© <span id="yr"></span> Utuscribe, LLC. All rights reserved.</div>
+    <div class="copy">
+      © <span id="yr-index"></span> Utuscribe, LLC. All rights reserved.
+    </div>
   </footer>
 
   <script>
-    // Year in footer
-    document.getElementById("yr").textContent = new Date().getFullYear();
-
-    // Header nav controls hero sections for Responder AI / AirScribe on the homepage
-    (function () {
-      var links = document.querySelectorAll(".site-nav a[data-section]");
-      var pill = document.getElementById("product-pill");
-      if (!pill) return;
-
-      var sections = {
-        responder: document.getElementById("section-responder"),
-        airscribe: document.getElementById("section-airscribe")
-      };
-
-      function showSection(key) {
-        // Toggle nav active state
-        links.forEach(function (link) {
-          var isActive = link.getAttribute("data-section") === key;
-          if (isActive) {
-            link.classList.add("nav-link-active");
-          } else {
-            link.classList.remove("nav-link-active");
-          }
-        });
-
-        // Toggle hero sections
-        Object.keys(sections).forEach(function (name) {
-          if (name === key) {
-            sections[name].classList.add("active");
-          } else {
-            sections[name].classList.remove("active");
-          }
-        });
-
-        // Update pill label
-        pill.textContent = key === "responder" ? "Responder AI" : "AirScribe";
-      }
-
-      links.forEach(function (link) {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          var key = link.getAttribute("data-section");
-          if (key === "responder" || key === "airscribe") {
-            showSection(key);
-          }
-        });
-      });
-    })();
+    document.getElementById("yr-index").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
