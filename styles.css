@@ -35,31 +35,52 @@ body {
   gap: 12px;
 }
 
-/* Logo capped so it doesn't dominate the page */
+/* Logo */
 .logo-img {
   max-height: 70px;
   width: auto;
 }
 
-/* Simple top navigation */
-.site-nav a {
-  color: #cfe6f7;
-  text-decoration: none;
-  margin-left: 14px;
+/* Nav styled like pill buttons */
+.site-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(6, 12, 18, 0.9);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.site-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
   font-weight: 600;
-  font-size: 14px;
-  opacity: .75;
+  text-decoration: none;
+  color: #cfe6f7;
+  background: transparent;
+  opacity: 0.75;
+  transition: background 0.15s ease, opacity 0.15s ease, color 0.15s ease;
 }
+
 .site-nav .nav-link-active {
+  background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
+  color: #06202b;
   opacity: 1;
 }
-.site-nav a:hover {
+
+.site-nav .nav-link:hover:not(.nav-link-active) {
   opacity: 1;
-  text-decoration: underline;
+  background: rgba(255,255,255,0.08);
 }
 
 /* =========================
-   Hero
+   Hero (Responder / AirScribe)
 ========================= */
 .hero {
   display: flex;
@@ -67,7 +88,6 @@ body {
   padding: 1.5rem 1.25rem 2.25rem;
 }
 
-/* Card stays constrained and centered */
 .card {
   width: 100%;
   max-width: 760px;
@@ -80,10 +100,12 @@ body {
     inset 0 1px 0 rgba(255,255,255,.06);
 }
 
-/* Label showing which product is active */
+/* Product label */
 .pill {
   display: inline-block;
-  font-size: 12px; font-weight: 700; letter-spacing: .2px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2px;
   color: #0b1a22;
   background: linear-gradient(90deg, #5cc8ff, #a0ffcc);
   padding: 6px 10px;
@@ -91,18 +113,22 @@ body {
   margin-bottom: 10px;
 }
 
-h1 { margin: 8px 0 10px; font-size: 28px; }
+h1 {
+  margin: 8px 0 10px;
+  font-size: 28px;
+}
+
 .focus { color: #a0ffcc; }
 
-.teaser { color: #a7b2bf; line-height: 1.6; margin: 0 0 12px; }
+.teaser {
+  color: #a7b2bf;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
 
-/* Product sections (only one visible at a time) */
-.hero-section {
-  display: none;
-}
-.hero-section.active {
-  display: block;
-}
+/* Only one hero section visible at a time on index */
+.hero-section { display: none; }
+.hero-section.active { display: block; }
 
 /* =========================
    Forms
@@ -113,7 +139,7 @@ h1 { margin: 8px 0 10px; font-size: 28px; }
   margin: 10px 0 6px;
 }
 
-/* Generic input styling */
+/* Generic inputs */
 input[type="email"],
 input[type="text"],
 input[type="tel"],
@@ -130,12 +156,14 @@ textarea {
   font-size: 15px;
   outline: none;
 }
+
 textarea {
   height: auto;
   padding-top: 10px;
   padding-bottom: 10px;
   resize: vertical;
 }
+
 input[type="email"]:focus,
 input[type="text"]:focus,
 input[type="tel"]:focus,
@@ -159,11 +187,13 @@ textarea:focus {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
+
 .field {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
+
 .field label {
   font-size: 12px;
   color: #cfe6f7;
@@ -178,6 +208,7 @@ textarea:focus {
   gap: 6px;
   align-items: flex-start;
 }
+
 .consent input[type="checkbox"] {
   margin-top: 3px;
 }
@@ -194,7 +225,10 @@ button {
   color: #06202b;
   padding: 0 16px;
 }
-button:active { transform: translateY(1px); }
+
+button:active {
+  transform: translateY(1px);
+}
 
 /* =========================
    Feature Points
@@ -205,15 +239,101 @@ button:active { transform: translateY(1px); }
   gap: 14px;
   margin-top: 18px;
 }
+
 .points article {
   background: #11151a;
   border: 1px solid rgba(255,255,255,.06);
   border-radius: 14px;
   padding: 16px;
 }
-.points h3 { margin: 0 0 6px; }
 
-.micro { font-size: 12px; color: #a7b2bf; }
+.points h3 {
+  margin: 0 0 6px;
+}
+
+.micro {
+  font-size: 12px;
+  color: #a7b2bf;
+}
+
+/* =========================
+   Page layouts (About / Contact)
+========================= */
+.page-main {
+  padding: 1.5rem 1.25rem 2.5rem;
+}
+
+.page-section {
+  display: flex;
+  justify-content: center;
+}
+
+.page-inner {
+  width: 100%;
+  max-width: 760px;
+}
+
+.page-title {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.page-lead {
+  color: #a7b2bf;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.page-card {
+  background: #11151a;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.06);
+  padding: 18px;
+  margin-top: 16px;
+}
+
+.page-list {
+  padding-left: 1.25rem;
+  margin-top: 8px;
+}
+
+/* Contact form on contact page */
+.contact-email a {
+  color: #5cc8ff;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-field label {
+  font-size: 12px;
+  color: #cfe6f7;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
 
 /* =========================
    Footer
@@ -223,11 +343,32 @@ button:active { transform: translateY(1px); }
   padding: 18px 22px;
   margin-top: 26px;
 }
-.links { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
-.links a { color: #5cc8ff; text-decoration: none; }
-.links a:hover { text-decoration: underline; }
-.disabled-link { color: #a7b2bf; opacity: .6; }
-.copy { color: #a7b2bf; font-size: 12px; }
+
+.links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.links a {
+  color: #5cc8ff;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.disabled-link {
+  color: #a7b2bf;
+  opacity: .6;
+}
+
+.copy {
+  color: #a7b2bf;
+  font-size: 12px;
+}
 
 /* =========================
    Responsive tweaks
@@ -236,11 +377,17 @@ button:active { transform: translateY(1px); }
   .site-header {
     padding: 0.8rem 1.25rem;
   }
+
   .hero {
     padding: 1.25rem 1rem 2rem;
   }
+
   .card {
     padding: 22px;
+  }
+
+  .page-main {
+    padding: 1.25rem 1rem 2.25rem;
   }
 }
 
@@ -248,13 +395,23 @@ button:active { transform: translateY(1px); }
   .points {
     grid-template-columns: 1fr;
   }
+
   .row {
     flex-direction: column;
   }
+
   button {
     width: 100%;
   }
-  .form-grid {
+
+  .form-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 }
