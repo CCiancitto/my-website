@@ -9,12 +9,18 @@
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <a href="index.html" class="brand">
+        <a href="index.html#responder" class="brand">
           <img src="Utuscribe_logo_darkbkgd_transparent.png" alt="Utuscribe logo" class="brand-logo">
           <span class="brand-name">Utuscribe</span>
         </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          ☰
+        </button>
+
         <nav class="nav">
-          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#responder" class="nav-link">Responder AI</a>
+          <a href="index.html#airscribe" class="nav-link">AirScribe</a>
           <a href="about.html" class="nav-link">About</a>
           <a href="contact.html" class="nav-link nav-link-active">Contact</a>
         </nav>
@@ -53,5 +59,19 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var navToggle = document.querySelector(".nav-toggle");
+        var nav = document.querySelector(".nav");
+        if (!navToggle || !nav) return;
+
+        navToggle.addEventListener("click", function () {
+          var expanded = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", String(!expanded));
+          nav.classList.toggle("nav-open", !expanded);
+        });
+      })();
+    </script>
   </body>
 </html>
