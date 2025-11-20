@@ -47,12 +47,23 @@
             authors and analysts in mind from day one.
           </p>
 
-          <a
-            href="mailto:contact@utuscribe.com?subject=AirScribe%20waitlist"
-            class="primary-button"
-          >
-            Join AirScribe waitlist
-          </a>
+          <!-- Waitlist signup form -->
+          <form class="inline-form" method="post" action="#">
+            <div class="form-field form-field-inline">
+              <label for="airscribe-email" class="sr-only">Email address</label>
+              <input
+                type="email"
+                id="airscribe-email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              >
+            </div>
+            <button type="submit" class="primary-button">
+              Join AirScribe waitlist
+            </button>
+          </form>
+
           <p class="hero-note">
             No spam. Just early access invitations and practical updates from the Utuscribe team.
           </p>
