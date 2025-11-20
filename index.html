@@ -2,20 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Utuscribe — Responder AI & AirScribe</title>
+    <title>Utuscribe — Responder AI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Utuscribe blends human creativity with thoughtful AI to power Responder AI and AirScribe.">
+    <meta name="description" content="Responder AI by Utuscribe: an AI-powered receptionist and lead responder for service businesses.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <a href="index.html" class="brand">
+        <a href="#responder" class="brand">
           <img src="Utuscribe_logo_darkbkgd_transparent.png" alt="Utuscribe logo" class="brand-logo">
           <span class="brand-name">Utuscribe</span>
         </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          ☰
+        </button>
+
         <nav class="nav">
-          <a href="index.html" class="nav-link nav-link-active">Home</a>
+          <a href="#responder" class="nav-link nav-link-active">Responder AI</a>
+          <a href="#airscribe" class="nav-link">AirScribe</a>
           <a href="about.html" class="nav-link">About</a>
           <a href="contact.html" class="nav-link">Contact</a>
         </nav>
@@ -23,11 +29,13 @@
     </header>
 
     <main>
-      <!-- Top label and brief suite intro -->
-      <section class="hero hero-tight">
+      <!-- Responder AI is the default landing section -->
+      <section class="hero hero-tight" id="responder">
         <div class="hero-inner">
-          <div class="hero-label">Utuscribe Suite</div>
-          <h1 class="hero-title">Responder AI and AirScribe, built for real work.</h1>
+          <div class="hero-label">Responder AI</div>
+          <h1 class="hero-title">
+            Responder AI and AirScribe, built for real work.
+          </h1>
           <p class="hero-subtitle">
             We are building an AI-powered receptionist for service businesses and a content
             intelligence system for authors and analysts, with speed, reliability, and human
@@ -36,15 +44,14 @@
         </div>
       </section>
 
-      <!-- Responder AI block + demo form -->
-      <section class="request-demo" id="responder">
+      <section class="request-demo">
         <div class="request-inner">
           <div class="request-header">
             <h2>Responder AI: your AI receptionist and lead responder.</h2>
             <p class="request-copy">
               Customer care that stays consistent and responsive without hiring more staff.
-              Responder AI greets callers, answers common questions, captures leads, and
-              helps with scheduling handoffs to your existing systems.
+              Responder AI greets callers, answers common questions, captures leads, and helps
+              with scheduling handoffs to your existing systems.
             </p>
           </div>
 
@@ -176,8 +183,8 @@
               <article class="pillar-card">
                 <h3>Lead response</h3>
                 <p>
-                  Answer inbound calls and messages quickly so potential customers are not left waiting
-                  or going to competitors.
+                  Answer inbound calls and messages quickly so potential customers are not left
+                  waiting or going to competitors.
                 </p>
               </article>
               <article class="pillar-card">
@@ -190,7 +197,8 @@
               <article class="pillar-card">
                 <h3>Consistent experience</h3>
                 <p>
-                  Give customers a steady first impression that reflects your brand every time they reach out.
+                  Give customers a steady first impression that reflects your brand every time they
+                  reach out.
                 </p>
               </article>
             </div>
@@ -198,11 +206,12 @@
         </div>
       </section>
 
-      <!-- AirScribe section -->
+      <!-- AirScribe: its own tab, below, no mixed messaging -->
       <section class="hero hero-secondary" id="airscribe">
         <div class="hero-inner">
+          <div class="hero-label">AirScribe</div>
           <h2 class="hero-title hero-title-secondary">
-            We turn complex content into clarity and creative insight.
+            Turn complex content into clarity and creative insight.
           </h2>
           <p class="hero-subtitle">
             AirScribe blends human creativity with thoughtful AI to transform ideas into meaningful,
@@ -255,5 +264,19 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var navToggle = document.querySelector(".nav-toggle");
+        var nav = document.querySelector(".nav");
+        if (!navToggle || !nav) return;
+
+        navToggle.addEventListener("click", function () {
+          var expanded = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", String(!expanded));
+          nav.classList.toggle("nav-open", !expanded);
+        });
+      })();
+    </script>
   </body>
 </html>
